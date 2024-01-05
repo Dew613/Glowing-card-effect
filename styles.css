@@ -17,12 +17,16 @@ body{
     justify-content: center;
 }
 
-.cards{
+#cards{
     display: flex;
     flex-wrap: wrap;
     max-width: 922px;
     width: calc(100%-20px);
     gap: 8px;
+}
+
+#cards:hover > .card > .card-border{
+    opacity: 1;
 }
 
 .card{
@@ -34,8 +38,7 @@ body{
     position: relative;
 }
 
-.card:hover::before,
-.card:hover > .card-border{
+.card:hover::before{
     opacity: 1;
 }
 
