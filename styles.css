@@ -2,7 +2,7 @@
     --bgcolor : #131313;
     --card-color: rgba(127,127,127,.05);
     --card-border: rgba(150,150,150,.1);
-    --glow-color: rgba(255,255,255,0.06);
+    --glow-color: rgba(255,255,255,0.13);
 }
 
 body{
@@ -34,6 +34,10 @@ body{
     position: relative;
 }
 
+.card:hover::before{
+    opacity: 1;
+}
+
 .card::before{
     content: "";
     height: 100%;
@@ -42,10 +46,12 @@ body{
     left: 0;
     position: absolute;
     border-radius: inherit;
-
+    opacity: 0;
+    transition: opacity 500ms;
     background: radial-gradient(
-        800px circle at 100px 100px, 
+        800px circle at var(--mouse-x) var(--mouse-y),
         var(--glow-color),
         transparent 40%
     );
+    z-index: 2;
 }
